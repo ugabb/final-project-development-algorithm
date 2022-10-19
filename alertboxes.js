@@ -1,5 +1,7 @@
 const btnImc = document.getElementById('btnImc');
 const btnMaior = document.getElementById('btnMaior');
+const btnTabuada = document.getElementById('btnTabuada');
+const btnNomes = document.getElementById('btnNomes');
 const alertBox = document.getElementById('alertboxContainer');
 
 //AlertBox para a função IMC
@@ -47,10 +49,45 @@ btnMaior.addEventListener('click', e => {
 })
 
 
+btnTabuada.addEventListener('click', e => {
+    e.preventDefault();
+
+    var div = document.createElement('div');
+    div.innerHTML += `
+        <div id="alertbox" class="alertbox">
+            <h1>Questão 3 - Tabuada</h1>
+            <label for="">Digite um valor para calcular a sua tabuada:</label>
+            <input type="number" id="tabuada">
+            <button class="btn" id="btnRes" onclick="tabuada()">Calcular</button>
+            <div id="res"></div>
+            <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
+        </div>
+    `;
+    alertBox.appendChild(div);
+})
 
 
 
+btnNomes.addEventListener("click", (e) => {
+    e.preventDefault();
 
+    var div = document.createElement('div');
+    div.innerHTML += `
+        <div id="alertbox" class="alertbox">
+            <h1>Questão 4 - Nomes</h1>
+            <label for="">Digite 10 nomes para conferir se existe</label>
+            <div class="inputContainer">
+                <input type="text" id="nomes">
+                <button id="addName" class="add" onclick="addName()">+</button>
+            </div>
+            <div id="list"></div>
+            <button class="btn" id="btnRes" onclick="nomes()">Calcular</button>
+            <div id="res"></div>
+            <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
+        </div>
+    `;
+    alertBox.appendChild(div);
+})
 
 
 

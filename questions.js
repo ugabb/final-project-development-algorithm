@@ -53,23 +53,24 @@ const imc = () => {
 }
 
 let array = [];
-
+let count = 0;
 const addArray = () => {
     const valores = document.getElementById('valores').value;
-    const pRes = document.getElementById('list');
-    
+
     if (valores >= 0) {
         var valor = Number(valores);
-        if(array.length < 20){
-           array.push(valor);
-        }else{
+        if (array.length < 20) {
+            array.push(valor);
+        } else {
             alert('Vetor cheio');
         }
-        
+
         console.log(array)
-        // const div = document.createElement('p');
-        // div.innerHTML = `<p style="text-align:center;">${array}</p>`;
-        // pRes.appendChild(div);
+
+        // contador de numeros no array
+        count += 1;
+        document.getElementById('list').innerHTML = count
+
     } else {
         alert('Digite valores maior que 0');
     }
@@ -89,4 +90,49 @@ const maior = () => {
     pRes.appendChild(div);
 
     return console.log(maior);
+}
+
+const tabuada = () => {
+    const pRes = document.getElementById('res');
+    const tabudaValue = Number(document.getElementById('tabuada').value);
+
+    const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let resposta = [];
+
+
+
+    for (let i = 0; i < array.length; i++) {
+        resposta.push(tabudaValue * i);
+        document.getElementById('res').innerHTML += `${tabudaValue} * ${i} = ${resposta[i]} / `;
+        console.log(resposta)
+        // const div = document.createElement('div');
+        // div.innerHTML = `
+        //         <p style="text-align:center; width:70px;">${tabudaValue} x ${i} = ${resposta[i]}</p>
+        // `;
+        // pRes.appendChild(div);
+    }
+
+
+
+}
+
+
+let nomesArray = [];
+count = 0;
+const addName = () => {
+    const nome = getElementById('nomes').value;
+    if (nome != '' && nome != ' ') {
+        nomesArray.push(nome);
+    } else {
+        alert('Digite algo!');
+    }
+    
+    count += 1;
+    document.getElementById('list').innerHTML = count
+
+}
+const nomes = () => {
+
+console.log('nomes')
+
 }
