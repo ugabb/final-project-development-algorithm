@@ -1,0 +1,29 @@
+
+:root {
+    --maincolor: rgb(104, 159, 109);
+    --secondarycolor: rgb(35, 39, 35);
+    --btnmaincolor: rgb(29, 29, 29);
+    --btnsecondarycolor: rgb(44, 209, 44);
+  }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    height: 40%;
+}
+
+.items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btnmaincolor);
+    height: 70px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.items:hover{
+    background-color: var(--btnsecondarycolor);
+}

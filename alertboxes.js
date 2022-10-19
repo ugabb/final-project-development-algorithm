@@ -2,6 +2,7 @@ const btnImc = document.getElementById('btnImc');
 const btnMaior = document.getElementById('btnMaior');
 const btnTabuada = document.getElementById('btnTabuada');
 const btnNomes = document.getElementById('btnNomes');
+const btnOrdenar = document.getElementById('btnOrdenar');
 const alertBox = document.getElementById('alertboxContainer');
 
 //AlertBox para a função IMC
@@ -64,7 +65,7 @@ btnTabuada.addEventListener('click', e => {
         </div>
     `;
     alertBox.appendChild(div);
-})
+});
 
 
 
@@ -77,20 +78,41 @@ btnNomes.addEventListener("click", (e) => {
             <h1>Questão 4 - Nomes</h1>
             <label for="">Digite 10 nomes para conferir se existe</label>
             <div class="inputContainer">
-                <input type="text" id="nomes">
+                <input type="text" id="names">
                 <button id="addName" class="add" onclick="addName()">+</button>
             </div>
+            <label for="">Digite o nome para procurar</label>
+            <input type="text" id="name">
             <div id="list"></div>
-            <button class="btn" id="btnRes" onclick="nomes()">Calcular</button>
+            <button class="btn" id="btnRes" onclick="nomes()">Procurar</button>
             <div id="res"></div>
             <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
         </div>
     `;
     alertBox.appendChild(div);
-})
+});
 
 
+btnOrdenar.addEventListener('click', e => {
+    e.preventDefault();
 
+    var div = document.createElement('div');
+    div.innerHTML += `
+        <div id="alertbox" class="alertbox">
+            <h1>Questão 5 - Ordenar</h1>
+            <label for="">Digite 10 números para ordenar crescentemente:</label>
+            <div class="inputContainer">
+                <input type="text" id="valores">
+                <button id="addName" class="add" onclick="addArray()">+</button>
+            </div>
+            <div id="list"></div>
+            <button class="btn" id="btnRes" onclick="ordenar()">Ordenar</button>
+            <div id="res"></div>
+            <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
+        </div>
+    `;
+    alertBox.appendChild(div);
+});
 
 
 

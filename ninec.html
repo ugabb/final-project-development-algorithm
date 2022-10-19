@@ -1,81 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./carousel.css">
-</head>
+    <link rel="stylesheet" href="./carousel.css" />
+    <link rel="stylesheet" href="./grid.css" />
+  </head>
 
-<body>
+  <body>
     <video autoplay loop muted plays-inline class="back-video">
-        <source src="./video.mp4" type="video/mp4">
+      <source src="./video.mp4" type="video/mp4" />
     </video>
     <div class="container">
+      <input type="radio" name="slider" id="item-1" checked />
+      <input type="radio" name="slider" id="item-2" />
+      <input type="radio" name="slider" id="item-3" />
+      <input type="radio" name="slider" id="item-4" />
+      <input type="radio" name="slider" id="item-5" />
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <div class="card border">
+            <h1>QUESTÃO1</h1>
+            <p>
+              Exercício: Perguntar ao usuário PESO E ALTURA para calcular o IMC.
+              Após calcular o IMC, validar se está dentro da seguinte
+              classificação: IMC Categoria 20,7 Abaixo do peso 20,7 a 26,4 Peso
+              ideal 26,5 a 27,8 Pouco acima do peso 27,9 a 31,1 Acima do peso
+              31,2 e acima Obesidade
+            </p>
+            <button class="btn" id="btnImc">FAZER</button>
+          </div>
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <div class="card border">
+            <h1>QUESTÃO2</h1>
+            <p>
+              Ler um vetor Q de 20 posições (aceitar somente números positivos).
+              Escrever a seguir o valor do maior elemento de Q e a respectiva
+              posição que ele ocupa no vetor.
+            </p>
 
-        <input type="radio" name="slider" id="item-1" checked>
-        <input type="radio" name="slider" id="item-2">
-        <input type="radio" name="slider" id="item-3">
-        <input type="radio" name="slider" id="item-4">
-        <input type="radio" name="slider" id="item-5">
-        <div class="cards">
-            <label class="card" for="item-1" id="song-1">
-                <div class="card border">
-                    <h1>QUESTÃO1</h1>
-                    <p>Exercício: Perguntar ao usuário PESO E ALTURA para calcular o IMC.
-                        Após calcular o IMC, validar se está dentro da seguinte classificação:
-                        IMC Categoria
-                        20,7 Abaixo do peso 20,7 a 26,4 Peso ideal 26,5 a 27,8 Pouco acima do peso 27,9 a 31,1 Acima
-                        do peso 31,2 e acima Obesidade </p> <button class="btn" id="btnImc">FAZER</button>
-                </div>
-            </label>
-            <label class="card" for="item-2" id="song-2">
-                <div class="card border">
-                    <h1>QUESTÃO2</h1>
-                    <p> Ler um vetor Q de 20 posições (aceitar somente números positivos). Escrever a seguir o valor do
-                        maior elemento de Q e a respectiva posição que ele ocupa no vetor.</p>
+            <button class="btn" id="btnMaior">FAZER</button>
+          </div>
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <div class="card border">
+            <h1>QUESTÃO3</h1>
+            <p>
+              Construir um código que imprima a tabuada do número específico
+              informado pelo usuário.
+            </p>
+            <button class="btn" id="btnTabuada">FAZER</button>
+          </div>
+        </label>
+        <label class="card" for="item-4" id="song-4">
+          <div class="card border">
+            <h1>QUESTÃO4</h1>
+            <p>
+              Escreva um algoritmo que permita a leitura dos nomes de 10 pessoas
+              e armaze os nomes lidos em um vetor. Após isto, o algoritmo deve
+              permitir a leitura de mais 1 nome qualquer de pessoa e depois
+              escrever a mensagem ACHEI, se o nome estiver entre os 10 nomes
+              lidos anteriormente (guardados no vetor), ou NÃO ACHEI caso
+              contrário.
+            </p>
+            <button class="btn" id="btnNomes">FAZER</button>
+          </div>
+        </label>
 
-                    <button class="btn" id="btnMaior">FAZER</button>
-                </div>
-            </label>
-            <label class="card" for="item-3" id="song-3">
-                <div class="card border">
-                    <h1>QUESTÃO3</h1>
-                    <p>Construir um código que imprima a tabuada do número específico informado pelo usuário.</p>
-                    <button class="btn" id="btnTabuada">FAZER</button>
-                </div>
-            </label>
-            <label class="card" for="item-4" id="song-4">
-                <div class="card border">
-                    <h1>QUESTÃO4</h1>
-                    <p>Escreva um algoritmo que permita a leitura dos nomes de 10 pessoas e armaze os nomes lidos
-                        em um vetor. Após isto, o algoritmo deve permitir a leitura de mais 1 nome qualquer de pessoa
-                        e depois escrever a mensagem ACHEI, se o nome estiver entre os 10 nomes lidos anteriormente
-                        (guardados no vetor), ou NÃO ACHEI caso contrário.</p>
-                    <button class="btn" id="btnNomes">FAZER</button>
-                </div>
-            </label>
+        <label class="card" for="item-5" id="song-5">
+          <div class="card border">
+            <h1>QUESTÃO5</h1>
+            <p>
+              Faça um algoritmo para ler 10 números e armazenar em um vetor.
+              Após isto, o algoritmo deve ordenar os números no vetor em ordem
+              crescente. Escrever o vetor ordenado.
+            </p>
+            <p style="text-align: center">Não achei</p>
+            <button class="btn" id="btnOrdenar">FAZER</button>
+          </div>
+        </label>
+      </div>
 
-            <label class="card" for="item-5" id="song-5">
-                <div class="card border">
-                    <h1>QUESTÃO5</h1>
-                    <p>Faça um algoritmo para ler 10 números e armazenar em um vetor. Após isto, o algoritmo deve
-                        ordenar os números no vetor em ordem crescente. Escrever o vetor ordenado.
-                    </p>
-                    <button class="btn" onclick="teste()">FAZER</button>
-                </div>
-            </label>
-        </div>
+      <div id="alertboxContainer"></div>
 
-        <div id="alertboxContainer">
-
-        </div>
+      <div class="grid-container">
+        <div class="items"><p>Antecessor</p></div>
+        <div class="items">Área de um <br> retângulo</div>
+        <div class="items">Quantos dias <br> de  vida</div>
+        <div class="items">Percentual de <br> Votos</div>
+        <div class="items">Reajuste de salário</div>
+        <div class="items">Custo de Fábrica</div>
+        <div class="items">Par ou Ímpar</div>
+        <div class="items">hello</div>
+        <div class="items">hello</div>
+        <div class="items">hello</div>
+      </div>
     </div>
 
     <script src="questions.js"></script>
     <script src="alertboxes.js"></script>
-</body>
-
+  </body>
 </html>

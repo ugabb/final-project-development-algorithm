@@ -1,37 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
-:root{
-  --maincolor:rgb(104, 159, 109);
-  --secondarycolor:rgb(35, 39, 35);
-  --btnmaincolor:rgb(29, 29, 29);
-  --btnsecondarycolor:rgb(44, 209, 44);
+:root {
+  --maincolor: rgb(104, 159, 109);
+  --secondarycolor: rgb(35, 39, 35);
+  --btnmaincolor: rgb(29, 29, 29);
+  --btnsecondarycolor: rgb(44, 209, 44);
 }
-
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding: 30px 10px;
-  font-family: 'DM Sans', sans-serif;
-  transition: background .4s ease-in;
-  background-color: #c394f8;
+  font-family: "DM Sans", sans-serif;
+  transition: background 0.4s ease-in;
+  background-color: var(--secondarycolor);
   color: white;
 }
 
-input[type=radio] {
+input[type="radio"] {
   display: none;
 }
 
@@ -42,16 +42,15 @@ input[type=radio] {
   left: 0;
   right: 0;
   margin: auto;
-  transition: transform .4s ease;
+  transition: transform 0.4s ease;
   cursor: pointer;
   text-align: center;
-
 }
 
-.card:hover{
+.card:hover {
   background-color: var(--secondarycolor);
   border-radius: 10px;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .border {
@@ -65,6 +64,7 @@ input[type=radio] {
   width: 100%;
   max-width: 800px;
   max-height: 600px;
+  min-height: 500px;
   height: 100%;
   transform-style: preserve-3d;
   display: flex;
@@ -87,31 +87,31 @@ img {
   object-fit: cover;
 }
 
-#item-1:checked~.cards #song-3,
-#item-2:checked~.cards #song-1,
-#item-3:checked~.cards #song-2,
-#item-4:checked~.cards #song-3,
-#item-5:checked~.cards #song-4 {
-  transform: translatex(-40%) scale(.8);
-  opacity: .4;
+#item-1:checked ~ .cards #song-3,
+#item-2:checked ~ .cards #song-1,
+#item-3:checked ~ .cards #song-2,
+#item-4:checked ~ .cards #song-3,
+#item-5:checked ~ .cards #song-4 {
+  transform: translatex(-40%) scale(0.8);
+  opacity: 0.4;
   z-index: 0;
 }
 
-#item-1:checked~.cards #song-2,
-#item-2:checked~.cards #song-3,
-#item-3:checked~.cards #song-4,
-#item-4:checked~.cards #song-5,
-#item-5:checked~.cards #song-1 {
-  transform: translatex(40%) scale(.8);
-  opacity: .4;
+#item-1:checked ~ .cards #song-2,
+#item-2:checked ~ .cards #song-3,
+#item-3:checked ~ .cards #song-4,
+#item-4:checked ~ .cards #song-5,
+#item-5:checked ~ .cards #song-1 {
+  transform: translatex(40%) scale(0.8);
+  opacity: 0.4;
   z-index: 0;
 }
 
-#item-1:checked~.cards #song-1,
-#item-2:checked~.cards #song-2,
-#item-3:checked~.cards #song-3,
-#item-4:checked~.cards #song-4,
-#item-5:checked~.cards #song-5 {
+#item-1:checked ~ .cards #song-1,
+#item-2:checked ~ .cards #song-2,
+#item-3:checked ~ .cards #song-3,
+#item-4:checked ~ .cards #song-4,
+#item-5:checked ~ .cards #song-5 {
   transform: translatex(0) scale(1);
   opacity: 1;
   z-index: 1;
@@ -126,23 +126,22 @@ img {
   background-color: var(--btnmaincolor);
   color: var(--btnsecondarycolor);
   font-weight: bold;
+  cursor: pointer;
 }
 
 .btn:hover {
   box-shadow: 0px 0px 99px 20px rgba(4, 255, 4, 0.349);
   color: white;
   background-color: rgb(0, 255, 0);
-  transition: .4s ease-in;
+  transition: 0.4s ease-in;
 }
 
-
 .back-video {
-  width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
 }
 
-.alertbox{
+.alertbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,59 +153,59 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 100;
 }
 
-.alertbox input{
+.alertbox input {
   border: none;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
 }
 
-.alertbox .btn{
+.alertbox .btn {
   border: none;
   padding: 5px;
   width: 150px;
   border-radius: 10px;
   font-weight: bold;
-  background-color:var(--btnmaincolor);
+  background-color: var(--btnmaincolor);
   color: var(--btnsecondarycolor);
   font-weight: bold;
 }
 
-.alertbox .btn:hover{
+.alertbox .btn:hover {
   box-shadow: 0px 0px 99px 2px var(--btnsecondarycolor);
   color: var(--btnmaincolor);
   background-color: var(--btnsecondarycolor);
-  transition: .4s ease-in;
+  transition: 0.4s ease-in;
 }
 
-#res{
+#res {
   height: 100px;
 }
 
-.inputContainer{
+.inputContainer {
   display: flex;
 }
 
-.add{
+.add {
   border: none;
   padding: 5px;
   width: 30px;
   height: 35px;
   border-radius: 10px;
   font-weight: bold;
-  background-color:var(--btnmaincolor);
+  background-color: var(--btnmaincolor);
   color: var(--btnsecondarycolor);
   font-weight: bold;
   margin-left: 10px;
 }
 
-.add:hover{
+.add:hover {
   box-shadow: 0px 0px 99px 2px var(--btnsecondarycolor);
   color: var(--btnmaincolor);
   background-color: var(--btnsecondarycolor);
-  transition: .4s ease-in;
+  transition: 0.4s ease-in;
 }

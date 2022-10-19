@@ -120,19 +120,58 @@ const tabuada = () => {
 let nomesArray = [];
 count = 0;
 const addName = () => {
-    const nome = getElementById('nomes').value;
+    const nome = document.getElementById('names').value;
     if (nome != '' && nome != ' ') {
         nomesArray.push(nome);
+        count += 1;
+        document.getElementById('list').innerHTML = count
     } else {
         alert('Digite algo!');
     }
-    
-    count += 1;
-    document.getElementById('list').innerHTML = count
 
+    console.log(nomesArray);
 }
 const nomes = () => {
+    const name = document.getElementById('name').value;
+    const res = document.getElementById('res')
+    let existe = false;
+    for (let i = 0; i < nomesArray.length; i++) {
+        if (name == nomesArray[i]) {
+            existe = true;
+        }
+    }
+    if (existe == true) {
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <p style="text-align:center;">Achei</p>
+        `;
+        res.appendChild(div)
+    } else {
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <p style="text-align:center">Não achei</p>
+        `;
+        res.appendChild(div);
+    }
+}
 
-console.log('nomes')
-
+const ordenar = () => {
+    const pRes = document.getElementById('res');
+    for (let i = array.length - 1; i > 0; i--) {
+        var troca = 0;
+        for (let j = 0; j < i; j++) {
+            if (array[j] > array[j + 1]) {
+                let temp = array[j];
+                array[j] = array[j + 1]
+                array[j + 1] = temp;
+                troca = 1;
+            }
+        }
+    }
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <p style="text-align:center;">${array}</p>
+    `;
+    pRes.appendChild(div)
+    if (troca == 0) return;
 }
