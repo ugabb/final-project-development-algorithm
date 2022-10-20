@@ -124,8 +124,8 @@ btnAntecessor.addEventListener("click", (e) => {
         <div id="alertbox" class="alertbox">
             <h1>Questão 6 - Antecessor</h1>
             <label for="">Digite um número para calcular seu antecessor</label>
-            <input type="text" id="valores">
-            <button class="btn" id="btnRes" onclick="ordenar()">Calcular</button>
+            <input type="number" id="valor">
+            <button class="btn" id="btnRes" onclick="antecessor()">Calcular</button>
             <div id="res"></div>
             <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
         </div>
@@ -140,10 +140,10 @@ btnRetangulo.addEventListener("click", (e) => {
         <div id="alertbox" class="alertbox">
             <h1>Questão 7 - Área do retângulo</h1>
             <label for="">Digite a altura</label>
-            <input type="text" id="altura">
+            <input type="number" id="altura">
             <label for="">Digite a base</label>
-            <input type="text" id="base">
-            <button class="btn" id="btnRes" onclick="()">Calcular</button>
+            <input type="number" id="base">
+            <button class="btn" id="btnRes" onclick="area()">Calcular</button>
             <div id="res"></div>
             <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
         </div>
@@ -158,8 +158,8 @@ btnDias.addEventListener("click", (e) => {
         <div id="alertbox" class="alertbox">
             <h1>Questão 8 - Dias vividos</h1>
             <label for="">Digite sua data de nascimento:</label>
-            <input type="text" id="dtNasc">
-            <button class="btn" id="btnRes" onclick="()">Calcular</button>
+            <input type="date" id="dtNasc">
+            <button class="btn" id="btnRes" onclick="dtNascimento()">Calcular</button>
             <div id="res"></div>
             <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
         </div>
@@ -174,15 +174,15 @@ btnVotos.addEventListener("click", (e) => {
         <div id="alertbox" class="alertbox">
             <h1>Questão 9 - Percentual de Votos</h1>
             <label for="">número total de eleitores</label>
-            <input type="text" id="valores">
+            <input type="text" id="total">
             <label for="">número de votos brancos</label>
-            <input type="text" id="valores">
+            <input type="text" id="brancos">
             <label for="">número de votos nulos</label>
-            <input type="text" id="valores">
+            <input type="text" id="nulos">
             <label for="">número de votos válidos</label>
-            <input type="text" id="valores">
+            <input type="text" id="validos">
 
-            <button class="btn" id="btnRes" onclick="()">Calcular</button>
+            <button class="btn" id="btnRes" onclick="votos()">Calcular</button>
             <div id="res"></div>
             <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
         </div>
@@ -196,12 +196,12 @@ btnSalario.addEventListener("click", (e) => {
   div.innerHTML += `
         <div id="alertbox" class="alertbox">
             <h1>Questão 10 - Reajuste de Salário</h1>
-            <label for="">Digite seu salário:</label>
+            <label for="">Digite seu salário(R$):</label>
             <input type="text" id="salario">
-            <label for="">Digite o reajuste:</label>
+            <label for="">Digite o reajuste(%):</label>
             <input type="text" id="reajuste">
 
-            <button class="btn" id="btnRes" onclick="()">Calcular</button>
+            <button class="btn" id="btnRes" onclick="reajuste()">Calcular</button>
             <div id="res"></div>
             <button class="btn" id="voltar" onclick="voltar()">Voltar</button>
         </div>
