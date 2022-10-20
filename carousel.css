@@ -166,7 +166,7 @@ img {
 
 .alertbox .btn {
   border: none;
-  padding: 5px;
+  padding: 10px;
   width: 150px;
   border-radius: 10px;
   font-weight: bold;
@@ -183,7 +183,8 @@ img {
 }
 
 #res {
-  height: 100px;
+  height: auto;
+  margin: 10px;
 }
 
 .inputContainer {
