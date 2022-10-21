@@ -239,14 +239,112 @@ const reajuste = () => {
   const pRes = document.getElementById("res");
   const salario = Number(document.getElementById("salario").value);
   const reajuste = parseFloat(document.getElementById("reajuste").value);
-  console.log(reajuste)
+  console.log(reajuste);
 
-  const reajusteCalculo = ((salario * reajuste) / 100);
-  const reajusteTotal = reajusteCalculo + salario
-  
+  const reajusteCalculo = (salario * reajuste) / 100;
+  const reajusteTotal = reajusteCalculo + salario;
+
   const div = document.createElement("div");
   div.innerHTML = `
         <p style="text-align:center;">Seu salário com o reajuste:R$${reajusteTotal}</p>
   `;
+  pRes.appendChild(div);
+};
+
+const custo = () => {
+  const pRes = document.getElementById("res");
+  const custo = Number(document.getElementById("custo").value);
+  let distribuidor = 0.28;
+  let impostos = 0.45;
+
+  let total = custo + custo * distribuidor + custo * impostos;
+
+  const div = document.createElement("div");
+  div.innerHTML = `
+        <p style="text-align:center;">Valor total: R$${total}</p>
+  `;
+  pRes.appendChild(div);
+};
+
+const parImpar = () => {
+  const pRes = document.getElementById("res");
+  const num = document.getElementById("parImpar").value;
+  const div = document.createElement("div");
+  if (num % 2 == 0) {
+    div.innerHTML = `
+      <p style="text-align:center;">o número ${num} é par</p>
+    `;
+    pRes.appendChild(div);
+  } else {
+    div.innerHTML = `
+      <p style="text-align:center;">o número ${num} é impar</p>
+    `;
+    pRes.appendChild(div);
+  }
+};
+
+const comissao = () => {
+  const pRes = document.getElementById("res");
+  const numCarros = Number(document.getElementById("numCarros").value);
+  const totalVendas = Number(document.getElementById("totalVendas").value);
+  const salarioFixo = Number(document.getElementById("salarioFixo").value);
+  const carroVendido = Number(document.getElementById("carroVendido").value);
+
+  const total = salarioFixo + carroVendido * numCarros + totalVendas * 0.05;
+
+  const div = document.createElement("div");
+  div.innerHTML = `
+        <p style="text-align:center;">Valor total: R$${total}</p>
+  `;
+  pRes.appendChild(div);
+};
+
+const maior100 = () => {
+  const pRes = document.getElementById("res");
+  const numero = Number(document.getElementById("numero").value);
+  const div = document.createElement("div");
+  if (numero > 100) {
+    div.innerHTML = `
+        <p style="text-align:center;">${numero} é maior que 100</p>
+    `;
+    pRes.appendChild(div);
+  } else if (numero == 100) {
+    div.innerHTML = `
+          <p style="text-align:center;">${numero} é igual a 100</p>
+      `;
+    pRes.appendChild(div);
+  } else {
+    div.innerHTML = `
+        <p style="text-align:center;">${numero} é menor que 100</p>
+    `;
+    pRes.appendChild(div);
+  }
+};
+
+const media = () => {
+  const pRes = document.getElementById("res");
+  const div = document.createElement("div");
+
+  let notas = [];
+  const nota1 = Number(document.getElementById("nota1").value);
+  const nota2 = Number(document.getElementById("nota2").value);
+  const nota3 = Number(document.getElementById("nota3").value);
+  const nota4 = Number(document.getElementById("nota4").value);
+  notas.push(nota1);
+  notas.push(nota2);
+  notas.push(nota3);
+  notas.push(nota4);
+
+  let total = 0;
+  for (let i = 0; i < notas.length; i++) {
+    total = total + notas[i];
+    console.log(total);
+  }
+
+  const media = total / notas.length;
+
+  div.innerHTML = `
+        <p style="text-align:center;">A média é: ${media}</p>
+    `;
   pRes.appendChild(div);
 };
